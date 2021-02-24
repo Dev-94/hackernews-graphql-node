@@ -20,3 +20,22 @@ type Link {
     description: String!
     url: String!
 }
+
+
+# mutation {
+#   post(url: "www.prisma.io", description: "Prisma replaces traditional ORMs") {
+#     id
+#   }
+# }
+
+# mutation {
+#   updateLink(id: "link-1", url: "www.bloggingtheboys.com", description: "replaced!") {
+#     id
+#   }
+# }
+
+# mutation {
+#     deleteLink(id: "link-2") {
+#     id
+#   }
+# }

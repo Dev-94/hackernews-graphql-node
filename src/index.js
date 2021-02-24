@@ -23,7 +23,22 @@ const resolvers = {
             }
             links.push(link)
             return link
-        }
+        },
+        updateLink: (parent, args) => {
+            // find item in Links with id, update to all three fields
+            let linkToUpdate = links.find(item => item.id == args.id)
+            linkToUpdate.description = args.description
+            linkToUpdate.url = args.url
+        },
+        deleteLink: (parent, args) => {
+            // find id with in Links, delete it
+            // let linkToDelete = links.filter(item => item.id == args.id)
+            // sieve out id, reassign links to filtered array without id
+            links = links.filter(item => item.id != args.id)
+            // splice before id, splice after id, join together
+
+
+        },
     }
 }
 
