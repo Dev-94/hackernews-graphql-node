@@ -9,3 +9,10 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
+
+model Link {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  description String
+  url         String
+}
