@@ -1,8 +1,13 @@
 type Query {
     info: String!
-    feed(filter: String, skip: Int, take: Int, orderBy: LinkOrderByInput): [Link!]!
+    feed(filter: String, skip: Int, take: Int, orderBy: LinkOrderByInput): Feed!
   # Fetch a single link by its `id`
     link(id: ID!): Link
+}
+
+type Feed {
+  links: [Link!]!
+  count: Int!
 }
 
 type Mutation {
@@ -59,6 +64,7 @@ enum Sort {
   asc
   desc
 }
+
 
 # mutation {
 #   post(url: "www.prisma.io", description: "Prisma replaces traditional ORMs") {
